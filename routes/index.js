@@ -2,7 +2,7 @@ const express=require('express');
 const Chat=require('../schemas/chat');
 const router=express.Router();
 
-router.get('/chat',async (req,res,next)=>{
+router.get('/',async (req,res,next)=>{
 	try{
 		const chats= await Chat.find({});
 		res.json({chats:chats});
