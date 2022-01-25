@@ -3,19 +3,23 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Chat</title>
-
+	<link rel="stylesheet" href="/css/style.css">
 	</head>
 <body>
-	<h1>Chat</h1>
-	<div>
-		<form id='chatSubmit'>
-			<input type="text" id='textBox' placeholder='입력하세요'>
-			<button type='submit'>보내기</button>
-		</form>
-	</div>
-	<div id='chatBox'></div>
+	<header>
+		<h1>Chat</h1>
+	</header>
+	<article>
+		<div id='main'>
+			<form id='chatSubmit'>
+				<input type="text" id='textBox' placeholder='입력하세요'>
+				<button type='submit'>보내기</button>
+			</form>
+		</div>
+		<div id='chatBox'></div>
+	</article>
 
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-	<script type='text/javascript' src='/index.js'></script>
+	<script type='text/javascript' src='/script/index.js'></script>
 </body>
 </html>

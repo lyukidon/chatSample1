@@ -20,7 +20,7 @@ function time(){
 router.route('/')
 	.get(async (req, res)=>{
 		try{
-			const chats=await Chat.find({});
+			const chats=await Chat.find({}).sort('-id');
 			res.json({chats:chats});
 		}catch(err){
 			console.error(err);
