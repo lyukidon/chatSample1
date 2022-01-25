@@ -1,4 +1,5 @@
 const express=require('express');
+const morgan=require('morgan');
 const path=require('path');
 const connect=require('./schemas/index');
 const indexRouter=require('./routes');
@@ -8,6 +9,7 @@ connect();
 
 const app=express();
 
+app.use(morgan('combined'))
 app.use(express.static(path.join(__dirname,'public')));
 
 app.set('port',process.env.PORT || 3000);

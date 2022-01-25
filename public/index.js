@@ -24,18 +24,9 @@ document.querySelector('form#chatSubmit').addEventListener('submit', async (even
 	const chatContent=event.target.textBox.value;
 	if (!chatContent){
 		alert('내용을 입력하세요');
-	}else{			
-		const now=new Date();
-		const year=now.getFullYear();
-		const month=now.getMonth()+1;
-		const date=now.getDate();
-		const hour=now.getHours();
-		const minute=now.getMinutes();
-		const second=now.getSeconds();
-		const time=`${year}.${month}.${date} ${hour}:${minute}:${second}`;
+	}else{
 		try{
 			await axios.post('/chat', {
-				time:time,
 				chatContent:chatContent
 			})
 					   .then((res)=>{
@@ -55,4 +46,4 @@ document.querySelector('form#chatSubmit').addEventListener('submit', async (even
 	
 		event.target.textBox.value='';	
 	}
-})
+});
