@@ -12,7 +12,6 @@ router.route('/')
 		}
 	})
 	.post(async (req,res)=>{
-		console.log(req.body.time+" @ routes/chat.js")
 		try{
 			const chatting=await Chat.create({
 				id:Date.now(),

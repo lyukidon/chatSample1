@@ -26,7 +26,6 @@ window.addEventListener('load', getChat)
 document.querySelector('form#chatSubmit').addEventListener('submit', async (event)=>{
 	event.preventDefault();
 	const chatContent=event.target.textBox.value;
-	console.log(chatContent)
 	if (!chatContent){
 		alert('내용을 입력하세요');
 	}else{			
