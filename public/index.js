@@ -10,18 +10,14 @@ async function getChat(){
 }
 
 function makeChat(data){
-	console.log(data)
 	data.chats.map(chat => {
 			const div=document.createElement('div');
-//			const timeSpan=document.createElemnet('span');
-//			timeSpan.textContent=chat.time;
-//			const chatSpan=document.createElement('span');
-//			chatSpan.textContent=chat.chatContent;
 			div.innerHTML = `<span>${chat.time}</span> <span>${chat.chatContent}</span>`
 			document.querySelector('div#chatBox').appendChild(div);
 	})
 }
 window.addEventListener('load', getChat)
+
 //채팅 보내기
 document.querySelector('form#chatSubmit').addEventListener('submit', async (event)=>{
 	event.preventDefault();
