@@ -29,12 +29,9 @@ document.querySelector('form#chatSubmit').addEventListener('submit', async (even
 			await axios.post('/chat', {
 				chatContent:chatContent
 			})
-					   .then((res)=>{
-						   console.log(res);
-					   })
-					   .catch((err)=>{
-						   console.error(err);
-					   })
+		    .catch((err)=>{
+			   console.error(err);
+		   })
 			const chatBox=document.querySelector('div#chatBox')
 			while (chatBox.hasChildNodes()) {
 				chatBox.removeChild(chatBox.firstChild); 
