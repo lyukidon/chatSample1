@@ -6,15 +6,16 @@ function num(date){
 	if (date > 9){return date}
 	else {return '0'+date}
 }
-const now=new Date();
-const year=now.getFullYear();
-const month=now.getMonth()+1;
-const date=now.getDate();
-const hour=now.getHours();
-const minute=now.getMinutes();
-const second=now.getSeconds();
-const time=`${year}.${num(month)}.${num(date)} ${num(hour)}:${num(minute)}:${num(second)}`;
-
+function time(){
+	const now=new Date();
+	const year=now.getFullYear();
+	const month=now.getMonth()+1;
+	const date=now.getDate();
+	const hour=now.getHours();
+	const minute=now.getMinutes();
+	const second=now.getSeconds();
+	return `${year}.${num(month)}.${num(date)} ${num(hour)}:${num(minute)}:${num(second)}`
+} 
 
 router.route('/')
 	.get(async (req, res)=>{
@@ -29,7 +30,7 @@ router.route('/')
 		try{
 			const chatting=await Chat.create({
 				id:Date.now(),
-				time:time,
+				time:time(),
 				chatContent:req.body.chatContent
 			})
 			res.status(201).json(chatting);
