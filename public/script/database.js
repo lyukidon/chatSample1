@@ -4,6 +4,7 @@ async function getChat(){
 		const res=await axios.get('/chat');
 		const db=res.data;
 		makeChat(db)
+		console.log(db)
 	}catch(err){
 		console.error(err);
 	}
@@ -19,7 +20,10 @@ function makeChat(data){
 		remove.addEventListener('click', async function(){
 			try{
 				await axios.delete(`/chat/${chat._id}`);
-				getChat();
+				while (chatBox.hasChildNodes()) {
+					chatBox.removeChild(chatBox.firstChild); 
+				}
+				getChat(data);
 			}catch(err){
 				console.error(err);
 			}
@@ -39,7 +43,7 @@ document.querySelector('form#chatSubmit').addEventListener('submit', async (even
 	}else{
 		try{
 			await axios.post('/chat', {
-				chatContent:chatContent
+				chatContent
 			})
 		    .catch((err)=>{
 			   console.error(err);
