@@ -39,4 +39,15 @@ router.route('/')
 		}
 	})
 
+router.route('/:id')
+	.delete(async (req,res,next)=>{
+		try{
+			const chatting=await Chat.remove({_id:req.params.id});
+			res.json(chatting)
+		}catch(err){
+			console.error(err);
+			next(err);
+		}
+	})
+
 module.exports=router;

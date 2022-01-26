@@ -18,6 +18,7 @@ app.set('view engine', 'ejs');
 
 app.use(bodyParser.json());
 app.use('/',indexRouter);
+app.get('/about', (req,res)=>{res.render('about')})
 app.use('/chat',chatRouter);
 
 app.listen(app.get('port'),()=>{
