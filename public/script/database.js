@@ -5,7 +5,6 @@ async function getChat(){
 		const db=res.data;
 		makeChat(db)
 		document.querySelector('div#chatBox').childNodes[0].style.border = '1px solid red'
-		console.log(db)
 	}catch(err){
 		console.error(err);
 	}
