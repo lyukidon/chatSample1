@@ -13,6 +13,7 @@ async function getChat(){
 function makeChat(data){
 	data.chats.map(chat => {
 		const div=document.createElement('div');
+		div.className='chats'
 		div.innerHTML = `<span>${chat.time}</span> <span>${chat.chatContent}</span>`
 		const remove=document.createElement('button');
 		remove.id=chat._id+'_remove';
