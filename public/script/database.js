@@ -4,7 +4,9 @@ async function getChat(){
 		const res=await axios.get('/chat');
 		const db=res.data;
 		makeChat(db)
-		document.querySelector('div#chatBox').childNodes[0].style.border = '1px solid red'
+		if(document.querySelector('div#chatBox').childNodes[0]){
+			document.querySelector('div#chatBox').childNodes[0].style.border = '1px solid red'
+		}
 	}catch(err){
 		console.error(err);
 	}
@@ -14,7 +16,7 @@ function makeChat(data){
 	data.chats.map(chat => {
 		const div=document.createElement('div');
 		div.className='chats'
-		div.innerHTML = `<span>${chat.time}</span> <span>${chat.chatContent}</span>`
+		div.innerHTML = `<span>${chat.time}</span> <span class='idColor'>${chat.userId}</span> <span>${chat.chatContent}</span>`
 		const remove=document.createElement('button');
 		remove.id=chat._id+'_remove';
 		remove.textContent='삭제';
@@ -38,12 +40,14 @@ window.addEventListener('load', getChat)
 //채팅 보내기
 document.querySelector('form#chatSubmit').addEventListener('submit', async (event)=>{
 	event.preventDefault();
+	const userId=event.target.idBox.value;
 	const chatContent=event.target.textBox.value;
 	if (!chatContent){
 		alert('내용을 입력하세요');
 	}else{
 		try{
 			await axios.post('/chat', {
+				userId,
 				chatContent
 			})
 		    .catch((err)=>{

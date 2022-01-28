@@ -30,6 +30,7 @@ router.route('/')
 		try{
 			const chatting=await Chat.create({
 				id:Date.now(),
+				userId:req.body.userId,
 				time:time(),
 				chatContent:req.body.chatContent
 			})

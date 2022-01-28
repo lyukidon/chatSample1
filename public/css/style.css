@@ -13,3 +13,10 @@ nav{
 .chats{
     text-align: center;
 }
+.idColor{
+	color: white;
+	background-color: black
+}
+.inlineBlock{
+	display:inline-block;
+}

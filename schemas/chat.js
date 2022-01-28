@@ -3,15 +3,17 @@ const mongoose=require('mongoose');
 const {Schema}=mongoose;
 const chatSchema = new Schema({
 	id:{
-		type:Number,
-		default:Date.now()
+		type:Number
+	},
+	userId:{
+		type:String,
 	},
 	time:{
 		type: String,
+		required: true
 	},
 	chatContent:{
-		type:String,
-		default:''
+		type:String
 	}
 })
 
