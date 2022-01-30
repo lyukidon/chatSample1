@@ -4,7 +4,6 @@ const path=require('path');
 const connect=require('./schemas/index');
 const indexRouter=require('./routes');
 const chatRouter=require('./routes/chat');
-const userRouter=require('./routes/user');
 const bodyParser=require('body-parser');
 connect();
 
@@ -21,7 +20,6 @@ app.use(bodyParser.json());
 app.use('/',indexRouter);
 app.get('/about', (req,res)=>{res.render('about')})
 app.use('/chat',chatRouter);
-app.use('/user', userRouter);
 
 app.listen(app.get('port'),()=>{
 	console.log('port '+ app.get('port')+ ' 대기 중');

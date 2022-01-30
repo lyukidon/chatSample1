@@ -56,11 +56,6 @@ document.querySelector('form#chatSubmit').addEventListener('submit', async (even
 				chatBox.removeChild(chatBox.firstChild); 
 			}
 			getChat();
-
-			//user데이터보내기
-			await axios.post('/user',{
-				userId
-			})
 		}catch(err){
 			console.error(err);
 		}
@@ -68,24 +63,3 @@ document.querySelector('form#chatSubmit').addEventListener('submit', async (even
 		event.target.textBox.value='';	
 	}
 });
-
-//user받아오기
-async function getUser(){
-	try{
-		const res=await axios.get('/user');
-		const db=res.data;
-		makeUser();
-	}catch(err){
-		console.error(err)
-	}
-}
-
-function makeUser(data){
-	data.users.map(function(user){
-		const div=document.createElement('div');
-		div.innerHTML=`<div>${user.userId}</div>`;
-		document.querySelector('userBox').appendChild(div);
-	})
-}
-
-window.addEventListener('load', getUesr);

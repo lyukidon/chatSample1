@@ -12,7 +12,7 @@ nav{
 	align-items: center;
 }
 .chats{
-    text-align: center;
+	display: block;
 }
 .idColor{
 	color: white;
@@ -20,4 +20,9 @@ nav{
 }
 .inlineBlock{
 	display:inline-block;
+}
+#box{
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
