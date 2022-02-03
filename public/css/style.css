@@ -1,6 +1,28 @@
 header{
-	text-align:middle;
+    width:100%;
+    text-align: center;
+}
+nav{
+    width: 50%;
+    margin: 0 auto;
 }
 #main{
-	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.chats{
+	display: block;
+}
+.idColor{
+	color: white;
+	background-color: black
+}
+.inlineBlock{
+	display:inline-block;
+}
+#box{
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }

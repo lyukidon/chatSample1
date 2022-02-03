@@ -16,15 +16,19 @@
 	<article>
 		<div id='main'>
 			<form id='chatSubmit'>
-				<input type="text" id='textBox' placeholder='입력하세요'>
-				<button type='submit'>보내기</button>
+				<input type="text" id='idBox' class="inlineBlock" placeholder="ID"> 
+				<input type="text" id='textBox' class="inlineBlock" placeholder='입력하세요'>
+				<button type='submit' class='inlineBlock'>보내기</button>
+
 			</form>
 		</div>
-		<div id='chatBox'></div>
+		<div id='box'>
+			<div id='chatBox'></div>
+		</div>
 	</article>
 
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-	<script type='text/javascript' src='/script/database.js'></script>
 	<script type='text/jacascript' src="/script/style.js"></script>
+	<script type='text/javascript' src='/script/chatting.js'></script>
 </body>
 </html>
