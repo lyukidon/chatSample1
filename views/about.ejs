@@ -10,27 +10,51 @@
 	<header>
 		<h1>About</h1>
 	</header>
-	<nav>
-		<a href="/">Home</a>
-		<a href="/about">About</a>
-	</nav>
-	<div>Made by <b>lyukidon</b></div>
-	<a href="https://github.com/lyukidon">Github</a>
-	<table>
-		<tr>
-			<th>Thumbnail</th>
-			<th>Title</th>
-			<th>Description</th>
-			<th>Date</th>
-		</tr>
-		<% project.map( data => { %>
+	<div id="main">
+		<nav>
+			<a href="/">Home</a>
+			<a href="/about">About</a>
+			
+		</nav>
+		<div id="introduction">
+			Made by <b>lyukidon</b>
+			<div>
+				<a href="https://github.com/lyukidon">Github</a>
+			</div>
+		</div>
+		<!-- SKILL -->
+		<table>
+	
+			<tr>
+				<th>JavaScript</th>
+				<th>HTML</th>
+				<th>CSS</th>
+				<th>NODE JS</th>
+				<th>REACT JS</th>
+			</tr>
+		</table>
+		<!-- PROJECT -->
+		<table>
+			<thead>
 				<tr>
-					<td><%= data.thumbnail %></td>
-					<td><%= data.title %></td>
-					<td><%= data.description %></td>
-					<td><%= data.date %></td>
+					<th>Thumbnail</th>
+					<th>Title</th>
+					<th>Description</th>
+					<th>Date</th>
 				</tr>
-		<% }) %>
-	</table>
+			</thead>
+			<tbody>
+				<% project.map( data => { %>
+					<tr>
+						<td><%= data.thumbnail %></td>
+						<td><%= data.title %></td>
+						<td><%= data.description %></td>
+						<td><%= data.date %></td>
+					</tr>
+				<% }) %>
+			</tbody>
+		</table>
+	
+	</div>
 </body>
 </html>

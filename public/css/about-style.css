@@ -1,6 +1,14 @@
 table{
-    border: 2px solid black;
+    width: auto;
+    margin: auto;
+    margin-bottom: 30px;
+    border-collapse: collapse;
 }
 th, td {
     border: 2px solid #444444;
+    padding: 0 10px 0 10px;
+}
+#introduction{
+    width: 50%;
+    margin: 0 auto;
 }
