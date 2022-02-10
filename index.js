@@ -2,9 +2,12 @@ const express=require('express');
 const morgan=require('morgan');
 const path=require('path');
 const connect=require('./schemas/index');
+
 const indexRouter=require('./routes');
 const chatRouter=require('./routes/chat');
+const aboutRouter=require('./routes/about')
 const bodyParser=require('body-parser');
+
 connect();
 
 const app=express();
@@ -18,7 +21,7 @@ app.set('view engine', 'ejs');
 
 app.use(bodyParser.json());
 app.use('/',indexRouter);
-app.get('/about', (req,res)=>{res.render('about')})
+app.use('/about', aboutRouter)
 app.use('/chat',chatRouter);
 
 app.listen(app.get('port'),()=>{

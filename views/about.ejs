@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>About</title>
+	<link rel="stylesheet" href="/css/about-style.css">
 </head>
 <body>
 	<header>
@@ -14,5 +15,21 @@
 	</nav>
 	<div>Made by <b>lyukidon</b></div>
 	<a href="https://github.com/lyukidon">Github</a>
+	<table>
+		<tr>
+			<th>thumbnail</th>
+			<th>title</th>
+			<th>description</th>
+			<th>date</th>
+		</tr>
+		<% project.map( data => { %>
+				<tr>
+					<td><%= data.thumbnail %></td>
+					<td><%= data.title %></td>
+					<td><%= data.description %></td>
+					<td><%= data.date %></td>
+				</tr>
+		<% }) %>
+	</table>
 </body>
 </html>
