@@ -1,0 +1,6 @@
+table{
+    border: 2px solid black;
+}
+th, td {
+    border: 2px solid #444444;
+}
