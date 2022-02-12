@@ -24,17 +24,19 @@
 		</div>
 		<!-- SKILL -->
 		<table>
-	
-			<tr>
-				<th>JavaScript</th>
-				<th>HTML</th>
-				<th>CSS</th>
-				<th>NODE JS</th>
-				<th>REACT JS</th>
-			</tr>
+			<% skills.map( skill => { %>
+				<tr>
+					<td><%= skill.category %></td>
+					<% skill.array.map( data =>{ %>
+						<td class="data">
+							<%= data %>
+						</td>
+					<% }) %>
+				</tr>
+			<% }) %>	
 		</table>
 		<!-- PROJECT -->
-		<table>
+		<table id="project-table">
 			<thead>
 				<tr>
 					<th>Thumbnail</th>
@@ -44,10 +46,14 @@
 				</tr>
 			</thead>
 			<tbody>
-				<% project.map( data => { %>
+				<% projects.map( data => { %>
 					<tr>
 						<td><%= data.thumbnail %></td>
-						<td><%= data.title %></td>
+						<td>
+							<a href= <%= data.url %> >
+								<%= data.title %>
+							</a>
+						</td>
 						<td><%= data.description %></td>
 						<td><%= data.date %></td>
 					</tr>
