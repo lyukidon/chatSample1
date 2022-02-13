@@ -1,0 +1,19 @@
+table{
+    width: auto;
+    margin: auto;
+    margin-bottom: 30px;
+    /* border-collapse: collapse; */
+}
+th, td {
+    border: 2px solid #444444;
+    padding: 2px 10px 2px 10px;
+}
+.data{
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+}
+#introduction{
+    width: 50%;
+    margin: 0 auto;
+}

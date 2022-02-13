@@ -3,16 +3,64 @@
 <head>
 	<meta charset="UTF-8">
 	<title>About</title>
+	<link rel="stylesheet" href="/css/page-default.css">
+	<link rel="stylesheet" href="/css/about-style.css">
 </head>
 <body>
 	<header>
 		<h1>About</h1>
 	</header>
-	<nav>
-		<a href="/">Home</a>
-		<a href="/about">About</a>
-	</nav>
-	<div>Made by <b>lyukidon</b></div>
-	<a href="https://github.com/lyukidon">Github</a>
+	<div id="main">
+		<nav>
+			<a href="/">Home</a>
+			<a href="/about">About</a>
+			
+		</nav>
+		<div id="introduction">
+			Made by <b>lyukidon</b>
+			<div>
+				<a href="https://github.com/lyukidon">Github</a>
+			</div>
+		</div>
+		<!-- SKILL -->
+		<table>
+			<% skills.map( skill => { %>
+				<tr>
+					<td><%= skill.category %></td>
+					<% skill.array.map( data =>{ %>
+						<td class="data">
+							<%= data %>
+						</td>
+					<% }) %>
+				</tr>
+			<% }) %>	
+		</table>
+		<!-- PROJECT -->
+		<table id="project-table">
+			<thead>
+				<tr>
+					<th>Thumbnail</th>
+					<th>Title</th>
+					<th>Description</th>
+					<th>Date</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% projects.map( data => { %>
+					<tr>
+						<td><%= data.thumbnail %></td>
+						<td>
+							<a href= <%= data.url %> >
+								<%= data.title %>
+							</a>
+						</td>
+						<td><%= data.description %></td>
+						<td><%= data.date %></td>
+					</tr>
+				<% }) %>
+			</tbody>
+		</table>
+	
+	</div>
 </body>
 </html>
