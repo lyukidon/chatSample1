@@ -55,7 +55,7 @@ const data={
             array: ['mongoDB']
         },{
             category: 'ETC',
-            array: ['Git', 'NGINX']
+            array: ['Git', 'NGINX', 'EJS']
         }
     ],
     projects: [
