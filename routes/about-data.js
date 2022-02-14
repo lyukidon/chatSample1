@@ -1,3 +1,29 @@
+class Skill {
+	constructor (category,array){
+		this.category=category;
+		this.array=array;
+	}
+}
+const frontend=(
+	'Front-End',
+	['HTML', 'CSS', 'JavaScript','React JS']
+)
+const backend=(
+	'Back-End',
+	['Node JS','Express JS']
+)
+const database=(
+	'Database',
+	['mongoDB']
+)
+const os=(
+	"OS",
+	['Debian', 'ubuntu', 'MacOS']
+)
+const etc=(
+	'ETC',
+	['Git', 'NGINX', 'EJS']
+)
 class Project {
     constructor (thumbnail,url,title,date,description,){
         this.thumbnail=thumbnail;
@@ -44,19 +70,11 @@ const rouletteGame=new Project(
 )
 const data={
     skills:[
-        {
-            category: 'Front-End',
-            array:['HTML', 'CSS', 'JavaScript','React JS'],
-        },{
-            category: 'Back-End',
-            array: ['Node JS','Express JS'],
-        },{
-            category: 'Database',
-            array: ['mongoDB']
-        },{
-            category: 'ETC',
-            array: ['Git', 'NGINX', 'EJS']
-        }
+		frontend,
+		backend,
+		database,
+		os,
+		etc
     ],
     projects: [
         tictactoe,
