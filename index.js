@@ -20,9 +20,9 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.json());
-app.use('/',indexRouter);
-app.use('/about', aboutRouter)
-app.use('/chat',chatRouter);
+app.use('/chat',indexRouter);
+app.use('/', aboutRouter)
+app.use('/chat-data',chatRouter);
 
 app.listen(app.get('port'),()=>{
 	console.log('port '+ app.get('port')+ ' 대기 중');

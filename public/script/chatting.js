@@ -1,7 +1,7 @@
 // 채팅 받아오기
 async function getChat(){
 	try{
-		const res=await axios.get('/chat');
+		const res=await axios.get('/chat-data');
 		const db=res.data;
 		makeChat(db)
 		if(document.querySelector('div#chatBox').childNodes[0]){
@@ -22,7 +22,7 @@ function makeChat(data){
 		remove.textContent='삭제';
 		remove.addEventListener('click', async function(){
 			try{
-				await axios.delete(`/chat/${chat._id}`);
+				await axios.delete(`/chat-data/${chat._id}`);
 				while (chatBox.hasChildNodes()) {
 					chatBox.removeChild(chatBox.firstChild); 
 				}
@@ -47,7 +47,7 @@ document.querySelector('form#chatSubmit').addEventListener('submit', async (even
 	}else{
 		try{
 			//채팅 데이터 보내기
-			await axios.post('/chat', {
+			await axios.post('/chat-data', {
 				userId,
 				chatContent
 			})
