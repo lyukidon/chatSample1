@@ -4,23 +4,23 @@ class Skill {
 		this.array=array;
 	}
 }
-const frontend=(
+const frontend=new Skill(
 	'Front-End',
 	['HTML', 'CSS', 'JavaScript','React JS']
 )
-const backend=(
+const backend=new Skill(
 	'Back-End',
 	['Node JS','Express JS']
 )
-const database=(
+const database=new Skill(
 	'Database',
 	['mongoDB']
 )
-const os=(
+const os=new Skill(
 	"OS",
 	['Debian', 'ubuntu', 'MacOS']
 )
-const etc=(
+const etc=new Skill(
 	'ETC',
 	['Git', 'NGINX', 'EJS']
 )
