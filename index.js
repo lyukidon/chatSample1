@@ -1,5 +1,6 @@
 const express=require('express');
 const morgan=require('morgan');
+const cors = require('cors')
 const path=require('path');
 const connect=require('./schemas/index');
 
@@ -11,6 +12,7 @@ const bodyParser=require('body-parser');
 connect();
 
 const app=express();
+app.use(cors())
 
 app.use(morgan('combined'))
 app.use(express.static(path.join(__dirname,'public')));
