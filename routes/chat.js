@@ -39,7 +39,6 @@ router
                 userId: req.body.userId,
                 time: time(),
                 chatContent: req.body.chatContent,
-                ip: req.headers['x-forwarded-for'] || req.socket.remoteAddress
             });
             res.status(201).json(chatting);
         } catch (err) {
