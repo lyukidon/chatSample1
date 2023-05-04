@@ -3,6 +3,7 @@ const morgan=require('morgan');
 const cors = require('cors')
 const path=require('path');
 const connect=require('./schemas/index');
+require('dotenv').config()
 
 const indexRouter=require('./routes');
 const chatRouter=require('./routes/chat');
@@ -26,6 +27,6 @@ app.use('/',indexRouter);
 app.use('/about', aboutRouter)
 app.use('/chat',chatRouter);
 
-app.listen(app.get('port'),()=>{
-	console.log('port '+ app.get('port')+ ' 대기 중');
+app.listen(process.env.PORT,()=>{
+	console.log('port '+ process.env.PORT + ' 대기 중');
 });
