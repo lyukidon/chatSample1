@@ -14,6 +14,10 @@ const chatSchema = new Schema({
 	},
 	chatContent:{
 		type:String
+	},
+	ip:{
+		type:String,
+		required: true
 	}
 })
 
